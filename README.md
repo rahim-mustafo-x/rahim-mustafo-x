@@ -17,13 +17,13 @@ Specializing in MVVM/MVI, Clean Architecture, and production apps with real user
 
 ## 🚀 Projects
 
-| App | Users | Stack | Status |
+| App | Stack | Stars | Status |
 |-----|-------|-------|--------|
-| **Muslim Uz** | 1.01K | Kotlin, MVVM, StateFlow | ✅ Production |
-| **Muslim Taqvim** | 345 | Kotlin, Clean Architecture | ✅ Production |
-| **e-Qarz** | 414+ | Kotlin, JWT, REST API | ✅ Production |
-| **Davomat Backend** | — | Java, PostgreSQL, JWT | ✅ Production |
-| **Davomat App + Bot** | — | Kotlin + Python (Telegram) | ✅ Production |
+| **Muslim Uz** | Kotlin, MVVM, StateFlow | ⭐ 1 | ✅ Production |
+| **Muslim Taqvim** | Kotlin, Clean Architecture | ⭐ 1 | ✅ Production |
+| **e-Qarz** | Kotlin, JWT, REST API | — | ✅ Production |
+| **Davomat Backend** | Java, PostgreSQL, JWT | ⭐ 1 | ✅ Production |
+| **Davomat App + Bot** | Kotlin + Python (Telegram) | ⭐ 1 | ✅ Production |
 
 ---
 
