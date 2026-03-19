@@ -2,8 +2,8 @@ name: Update README
 
 on:
   schedule:
-    - cron: "0 0 * * *"   # every day at midnight UTC
-  workflow_dispatch:        # also allows manual trigger from GitHub UI
+    - cron: "0 0 * * *"
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -22,7 +22,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install -r requirements.txt
 
       - name: Run update script
         env:
@@ -33,6 +33,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
           git add README.md
           git diff --staged --quiet || git commit -m "chore: auto-update README stats"
           git push
