@@ -137,16 +137,17 @@ def update_readme():
     )
 
     # ── 3. Total stars badge ───────────────────────────────────────────────────
-    total = get_total_stars(all_repos)
-    content = re.sub(
-        r"!\[Stars\]\(.*?\)",
-        f"
+total = get_total_stars(all_repos)
+badge = f"
 
 ![Stars](https://img.shields.io/badge/Total%20Stars-{total}-yellow?style=flat-square)
 
-",
-        content,
-    )
+"
+content = re.sub(
+    r"!\[Stars\]\(.*?\)",
+    badge,
+    content,
+)
 
     with open("README.md", "w", encoding="utf-8") as f:
         f.write(content)
