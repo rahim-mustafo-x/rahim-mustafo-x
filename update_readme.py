@@ -11,6 +11,7 @@ from collections import Counter
 
 GITHUB_USERNAME = "rahim-mustafo-x"
 TELEGRAM_USERNAME = "rahim_mustafo_x"
+YOUTUBE_URL = "https://www.youtube.com/@rahim.mustafo.x"
 TOKEN = os.environ.get("GH_TOKEN")
 HEADERS = {"Authorization": "token " + TOKEN} if TOKEN else {}
 
@@ -103,7 +104,7 @@ def build_languages_section(lang_bytes, top_n=12):
     for lang, count in top:
         pct = count / total_bytes * 100
         bar_len = int(pct / 2)
-        bar = "█" * bar_len + "░" * (50 - bar_len)
+        bar = "█" * bar_len
         lang_padded = lang.ljust(20)
         pct_str = str(round(pct, 1)).rjust(5)
         lines.append("`" + lang_padded + "` " + bar + " " + pct_str + "%")
@@ -177,6 +178,9 @@ def build_readme(all_repos, lang_bytes):
     lines.append('<div align="center">')
     lines.append('  <a href="https://t.me/' + TELEGRAM_USERNAME + '">')
     lines.append('    <img src="https://img.shields.io/badge/Telegram-1DA1F2?style=for-the-badge&logo=telegram&logoColor=white" />')
+    lines.append('  </a>')
+    lines.append('  <a href="' + YOUTUBE_URL + '">')
+    lines.append('    <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" />')
     lines.append('  </a>')
     lines.append('</div>')
     lines.append('')
