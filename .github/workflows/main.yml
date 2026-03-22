@@ -36,4 +36,5 @@ jobs:
           git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
           git add README.md
           git diff --staged --quiet || git commit -m "chore: auto-update README stats"
+          git pull --rebase origin main
           git push
