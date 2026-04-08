@@ -9,7 +9,7 @@
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=15&pause=1000&color=00FF2B&center=true&vCenter=true&multiline=true&repeat=false&random=false&width=950&height=75&lines=Ismim+Mustafo+Rahim,+Android+va+Backend+dasturchisiman" alt="Typing SVG" />
 </a>
 
-![Stars](https://img.shields.io/badge/Total%20Stars-52-yellow?style=flat-square)
+![Stars](https://img.shields.io/badge/Total%20Stars-49-yellow?style=flat-square)
 
 </div>
 
@@ -47,8 +47,8 @@
 | **Muslim Uz** | Kotlin, MVVM, StateFlow | ⭐ 1 | ✅ Production |
 | **Muslim Taqvim** | Kotlin, Clean Architecture | ⭐ 1 | ✅ Production |
 | **e-Qarz** | Kotlin, JWT, REST API | — | ✅ Production |
-| **DavomatAppKMP** | Java, PostgreSQL, JWT | ⭐ 1 | ✅ Production |
-| **DavomatApp_Telegram_bot** | Kotlin + Python (Telegram) | ⭐ 1 | ✅ Production |
+| **DavomatAppKMP** | Java, PostgreSQL, JWT | — | ✅ Production |
+| **DavomatApp_Telegram_bot** | Kotlin + Python (Telegram) | — | ✅ Production |
 
 ---
 
