@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tug'ilgan kuning bilan, Dinora!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF5EA;
+    --cream-deep:#F3E9D6;
+    --rose:#D8283C;
+    --rose-deep:#A3121F;
+    --sage:#5F8365;
+    --sage-deep:#3E5F45;
+    --gold:#CC9A4A;
+    --ink:#3A2E33;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background: linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
+    font-family:'Jost', sans-serif;
+    color:var(--ink);
+    overflow-x:hidden;
+    min-height:100vh;
+    position:relative;
+  }
+
+  /* ambient floating petals */
+  .petal{
+    position:fixed;
+    top:-40px;
+    font-size:18px;
+    opacity:.55;
+    pointer-events:none;
+    animation-name:fall;
+    animation-timing-function:linear;
+    animation-iteration-count:infinite;
+    z-index:0;
+    user-select:none;
+  }
+  @keyframes fall{
+    0%{ transform:translateY(0) rotate(0deg); opacity:0;}
+    10%{opacity:.6;}
+    100%{ transform:translateY(110vh) rotate(360deg); opacity:0;}
+  }
+
+  .wrap{
+    position:relative;
+    z-index:1;
+    max-width:760px;
+    margin:0 auto;
+    padding:64px 24px 120px;
+  }
+
+  .eyebrow{
+    text-align:center;
+    letter-spacing:.35em;
+    text-transform:uppercase;
+    font-size:11px;
+    color:var(--rose-deep);
+    font-weight:500;
+    margin-bottom:18px;
+  }
+
+  h1{
+    font-family:'Cormorant Garamond', serif;
+    text-align:center;
+    font-size:clamp(44px, 9vw, 76px);
+    font-weight:600;
+    line-height:1.05;
+    margin:0 0 8px;
+    color:var(--rose-deep);
+  }
+  h1 em{
+    font-style:italic;
+    color:var(--sage-deep);
+  }
+
+  .subtitle{
+    text-align:center;
+    font-size:16px;
+    color:#6b5b61;
+    max-width:480px;
+    margin:0 auto 56px;
+    line-height:1.6;
+  }
+
+  /* countdown */
+  .countdown{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-bottom:14px;
+  }
+  .cbox{
+    background:#fff;
+    border:1px solid #ecdfc9;
+    border-radius:14px;
+    padding:18px 10px;
+    width:88px;
+    text-align:center;
+    box-shadow:0 6px 18px rgba(160,110,90,.08);
+  }
+  .cbox .num{
+    font-family:'Cormorant Garamond', serif;
+    font-size:38px;
+    font-weight:600;
+    color:var(--rose-deep);
+    line-height:1;
+    font-variant-numeric:tabular-nums;
+  }
+  .cbox .lbl{
+    margin-top:6px;
+    font-size:10px;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    color:#8a7a80;
+  }
+  .countdown-caption{
+    text-align:center;
+    font-size:13px;
+    color:#8a7a80;
+    margin-bottom:70px;
+  }
+
+  /* garden signature section */
+  .garden-section{
+    text-align:center;
+  }
+  .garden-title{
+    font-family:'Cormorant Garamond', serif;
+    font-size:30px;
+    color:var(--sage-deep);
+    margin-bottom:6px;
+  }
+  .garden-hint{
+    font-size:14px;
+    color:#7a8b76;
+    margin-bottom:28px;
+  }
+
+  .garden{
+    position:relative;
+    width:100%;
+    max-width:640px;
+    height:260px;
+    margin:0 auto;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 12px 32px rgba(120,90,60,.12);
+    transition:background 1s ease;
+  }
+  .sky-glow{
+    position:absolute;
+    top:0; left:0; right:0; height:72%;
+    transition:background 1s ease;
+  }
+  .grass-blades{
+    position:absolute;
+    left:0; right:0;
+    top:calc(72% - 11px);
+    height:22px;
+    background: var(--grass-tone, #6fa350);
+    clip-path: polygon(0.00% 0%, 3.85% 100%, 7.69% 0%, 11.54% 100%, 15.38% 0%, 19.23% 100%, 23.08% 0%, 26.92% 100%, 30.77% 0%, 34.62% 100%, 38.46% 0%, 42.31% 100%, 46.15% 0%, 50.00% 100%, 53.85% 0%, 57.69% 100%, 61.54% 0%, 65.38% 100%, 69.23% 0%, 73.08% 100%, 76.92% 0%, 80.77% 100%, 84.62% 0%, 88.46% 100%, 92.31% 0%, 96.15% 100%, 100.00% 0%, 100% 100%, 0% 100%);
+  }
+  body[data-time="day"] .grass-blades{ --grass-tone:#78ab52; }
+  body[data-time="night"] .grass-blades{ --grass-tone:#274a2c; }
+
+  /* daytime: clear vivid blue sky above, lush green grass below (tulip-garden style) */
+  body[data-time="day"] .garden{
+    background: linear-gradient(180deg, #6FC6EA 0%, #A9DDF0 32%, #DCF1F7 62%, #eaf6df 72%, #8fc26a 72%, #5f9c48 100%);
+  }
+  body[data-time="day"] .sky-glow{
+    background:
+      radial-gradient(circle at 82% 14%, rgba(255,252,220,.95), rgba(255,252,220,0) 30%),
+      radial-gradient(ellipse at 50% 0%, rgba(255,255,255,.35), rgba(255,255,255,0) 65%);
+  }
+  /* nighttime: deep navy sky, moon + stars, moonlit grass */
+  body[data-time="night"] .garden{
+    background: linear-gradient(180deg, #0C1B3A 0%, #1B2C52 45%, #223a25 72%, #223a25 72%, #16260f 100%);
+  }
+  body[data-time="night"] .sky-glow{
+    background:
+      radial-gradient(circle at 78% 16%, rgba(245,244,225,.95), rgba(245,244,225,.15) 22%, rgba(245,244,225,0) 34%),
+      radial-gradient(ellipse at 50% 0%, rgba(20,30,60,.35), rgba(20,30,60,0) 70%);
+  }
+  .star{
+    position:absolute;
+    width:2px; height:2px;
+    background:#fff;
+    border-radius:50%;
+    opacity:.85;
+  }
+  .stars{
+    position:absolute;
+    top:0; left:0; right:0; height:72%;
+    pointer-events:none;
+  }
+  .moon-halo{
+    position:absolute;
+    top:6%; right:12%;
+    width:34px; height:34px;
+    border-radius:50%;
+    background:#F7F3D9;
+    box-shadow:0 0 22px 6px rgba(247,243,217,.55);
+    display:none;
+  }
+  body[data-time="night"] .moon-halo{ display:block; }
+
+  /* decorative windmill, base touching the grass line */
+  .windmill{
+    position:absolute;
+    bottom:28%;
+    left:8%;
+    width:72px;
+    height:auto;
+    opacity:.65;
+    transform-origin:bottom center;
+  }
+  body[data-time="night"] .windmill{ opacity:.4; }
+
+  /* bees & butterflies that visit the blooms */
+  .bee, .butterfly{
+    position:absolute;
+    font-size:20px;
+    opacity:0;
+    z-index:3;
+    pointer-events:none;
+    top:40%;
+    left:14%;
+    transition:opacity 1.2s ease;
+  }
+  .bee.active{
+    opacity:1;
+    animation: beeFly 9s ease-in-out infinite;
+  }
+  .butterfly.active{
+    opacity:1;
+    animation: butterflyFly 12s ease-in-out infinite;
+  }
+  @keyframes beeFly{
+    0%{  left:14%; top:44%; transform:rotate(0deg);}
+    20%{ left:38%; top:36%; transform:rotate(10deg);}
+    40%{ left:62%; top:46%; transform:rotate(-8deg);}
+    60%{ left:86%; top:38%; transform:rotate(8deg);}
+    80%{ left:50%; top:48%; transform:rotate(-6deg);}
+    100%{left:14%; top:44%; transform:rotate(0deg);}
+  }
+  @keyframes butterflyFly{
+    0%{  left:22%; top:28%; transform:rotate(0deg) scale(1);}
+    25%{ left:50%; top:20%; transform:rotate(12deg) scale(1.08);}
+    50%{ left:80%; top:30%; transform:rotate(-10deg) scale(1);}
+    75%{ left:55%; top:24%; transform:rotate(8deg) scale(1.08);}
+    100%{left:22%; top:28%; transform:rotate(0deg) scale(1);}
+  }
+
+  .plot{
+    position:absolute;
+    bottom:0;
+    width:76px;
+    height:100%;
+    transform:translateX(-50%);
+  }
+  .plot[data-idx="1"]{ left:14%; }
+  .plot[data-idx="2"]{ left:38%; }
+  .plot[data-idx="3"]{ left:62%; }
+  .plot[data-idx="4"]{ left:86%; }
+
+  .soil-mound{
+    display:none;
+  }
+
+  .seed{
+    position:absolute;
+    bottom:29%;
+    left:50%;
+    transform:translate(-50%, -60px);
+    width:9px;
+    height:12px;
+    background:#6b4b2f;
+    border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;
+    opacity:0;
+  }
+  .seed.drop{
+    animation:seedDrop 1s ease-in forwards;
+  }
+  @keyframes seedDrop{
+    0%{ opacity:1; transform:translate(-50%,-140px) rotate(0deg);}
+    75%{ opacity:1; transform:translate(-50%, 0px) rotate(200deg);}
+    100%{ opacity:0; transform:translate(-50%, 4px) rotate(220deg);}
+  }
+
+  .plant{
+    position:absolute;
+    bottom:28%;
+    left:50%;
+    transform:translateX(-50%) scaleY(0);
+    transform-origin:bottom center;
+    width:100px;
+    height:140px;
+  }
+  .plant.grow{
+    animation:growPlant 3.2s cubic-bezier(.34,1.1,.4,1) forwards;
+  }
+  @keyframes growPlant{
+    0%{ transform:translateX(-50%) scaleY(0); opacity:0;}
+    8%{opacity:1;}
+    100%{ transform:translateX(-50%) scaleY(1); opacity:1;}
+  }
+
+  .stem{
+    position:absolute;
+    bottom:0; left:50%;
+    width:5px; height:100%;
+    background:linear-gradient(180deg,#7ba36f, #4f7a4f);
+    border-radius:6px;
+    transform:translateX(-50%);
+  }
+  .leaf{
+    position:absolute;
+    width:36px; height:20px;
+    background:#6d9d5f;
+    border-radius:0 100% 0 100%;
+  }
+  .leaf.l1{ bottom:38%; left:50%; transform:translateX(-90%) rotate(-15deg);}
+  .leaf.l2{ bottom:55%; left:50%; transform:translateX(2%) rotate(20deg) scaleX(-1);}
+
+  .bloom{
+    position:absolute;
+    top:-4px; left:50%;
+    transform:translate(-50%,-10px) scale(0);
+    opacity:0;
+    width:88px; height:88px;
+  }
+  .plant.grow .bloom{
+    animation:bloomIn .9s ease-out forwards;
+    animation-delay:2.5s;
+  }
+  @keyframes bloomIn{
+    0%{ transform:translate(-50%,-10px) scale(0) rotate(-30deg); opacity:0;}
+    70%{ transform:translate(-50%,-10px) scale(1.15) rotate(6deg); opacity:1;}
+    100%{ transform:translate(-50%,-10px) scale(1) rotate(0deg); opacity:1;}
+  }
+  /* rose-shaped bloom: layered curled petals around a spiral center */
+  .petal-shape{
+    position:absolute;
+    top:50%; left:50%;
+    width:32px; height:38px;
+    background:var(--flower-color, var(--rose));
+    border-radius:0% 60% 0% 60%;
+    transform-origin:50% 85%;
+    box-shadow: inset -4px -4px 8px rgba(0,0,0,.12);
+  }
+  /* outer layer - larger, looser petals */
+  .petal-shape:nth-child(1){ width:42px; height:46px; transform:translate(-50%,-78%) rotate(10deg);  background:var(--flower-color, var(--rose)); opacity:.95;}
+  .petal-shape:nth-child(2){ width:42px; height:46px; transform:translate(-50%,-78%) rotate(82deg);  background:var(--flower-color, var(--rose)); opacity:.95;}
+  .petal-shape:nth-child(3){ width:42px; height:46px; transform:translate(-50%,-78%) rotate(154deg); background:var(--flower-color, var(--rose)); opacity:.95;}
+  .petal-shape:nth-child(4){ width:42px; height:46px; transform:translate(-50%,-78%) rotate(226deg); background:var(--flower-color, var(--rose)); opacity:.95;}
+  .petal-shape:nth-child(5){ width:42px; height:46px; transform:translate(-50%,-78%) rotate(298deg); background:var(--flower-color, var(--rose)); opacity:.95;}
+  /* inner curled layer - smaller, deeper red, rotated offset */
+  .bloom-center{
+    position:absolute;
+    top:50%; left:50%;
+    width:0; height:0;
+  }
+  .bloom-center .inner-petal{
+    position:absolute;
+    top:0; left:0;
+    width:24px; height:28px;
+    background:var(--flower-center, var(--rose-deep));
+    border-radius:0% 60% 0% 60%;
+    transform-origin:50% 85%;
+    box-shadow: inset -3px -3px 6px rgba(0,0,0,.18);
+  }
+  .bloom-center .inner-petal:nth-child(1){ transform:translate(-50%,-70%) rotate(35deg); }
+  .bloom-center .inner-petal:nth-child(2){ transform:translate(-50%,-70%) rotate(107deg); }
+  .bloom-center .inner-petal:nth-child(3){ transform:translate(-50%,-70%) rotate(179deg); }
+  .bloom-center .inner-petal:nth-child(4){ transform:translate(-50%,-70%) rotate(251deg); }
+  .bloom-center .inner-petal:nth-child(5){ transform:translate(-50%,-70%) rotate(323deg); }
+  /* tight spiral core - real flowers usually show golden stamens at center */
+  .bloom-core{
+    position:absolute;
+    top:50%; left:50%;
+    width:16px; height:16px;
+    background:var(--gold);
+    border-radius:50%;
+    transform:translate(-50%,-58%);
+    box-shadow: inset -2px -2px 4px rgba(0,0,0,.2), 0 0 0 3px rgba(255,246,214,.5);
+  }
+
+  /* daisy pattern: flat single-layer petals around a bright yellow disc */
+  .bloom.type-daisy .petal-shape{
+    width:15px; height:44px;
+    border-radius:50% 50% 50% 50% / 55% 55% 45% 45%;
+    box-shadow:none;
+  }
+  .bloom.type-daisy .petal-shape:nth-child(1){ transform:translate(-50%,-84%) rotate(0deg); width:15px; height:44px;}
+  .bloom.type-daisy .petal-shape:nth-child(2){ transform:translate(-50%,-84%) rotate(72deg); width:15px; height:44px;}
+  .bloom.type-daisy .petal-shape:nth-child(3){ transform:translate(-50%,-84%) rotate(144deg); width:15px; height:44px;}
+  .bloom.type-daisy .petal-shape:nth-child(4){ transform:translate(-50%,-84%) rotate(216deg); width:15px; height:44px;}
+  .bloom.type-daisy .petal-shape:nth-child(5){ transform:translate(-50%,-84%) rotate(288deg); width:15px; height:44px;}
+  .bloom.type-daisy .inner-petal{ display:none; }
+  .bloom.type-daisy .bloom-core{
+    width:30px; height:30px;
+    box-shadow: inset -3px -3px 6px rgba(0,0,0,.18), 0 0 0 2px rgba(255,246,214,.6);
+  }
+
+  /* tulip pattern: 3 large cupped petals, no visible center */
+  .bloom.type-tulip .petal-shape:nth-child(4),
+  .bloom.type-tulip .petal-shape:nth-child(5){ display:none; }
+  .bloom.type-tulip .petal-shape:nth-child(1){ width:34px; height:58px; border-radius:50% 50% 50% 50% / 65% 65% 35% 35%; transform:translate(-50%,-92%) rotate(-16deg); box-shadow:none;}
+  .bloom.type-tulip .petal-shape:nth-child(2){ width:36px; height:62px; border-radius:50% 50% 50% 50% / 65% 65% 35% 35%; transform:translate(-50%,-96%) rotate(0deg); box-shadow:none;}
+  .bloom.type-tulip .petal-shape:nth-child(3){ width:34px; height:58px; border-radius:50% 50% 50% 50% / 65% 65% 35% 35%; transform:translate(-50%,-92%) rotate(16deg); box-shadow:none;}
+  .bloom.type-tulip .inner-petal{ display:none; }
+  .bloom.type-tulip .bloom-core{ display:none; }
+
+  .plant-btn{
+    margin-top:30px;
+    background:var(--sage-deep);
+    color:#fff;
+    border:none;
+    padding:14px 34px;
+    border-radius:999px;
+    font-family:'Jost',sans-serif;
+    font-size:14px;
+    letter-spacing:.06em;
+    cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease, opacity .3s;
+    box-shadow:0 8px 20px rgba(60,90,60,.25);
+  }
+  .plant-btn:hover{ transform:translateY(-2px); }
+  .plant-btn:active{ transform:translateY(0px) scale(.98); }
+  .plant-btn.hidden{ opacity:0; pointer-events:none; height:0; margin:0; padding:0; overflow:hidden;}
+
+  /* celebration */
+  .celebration{
+    text-align:center;
+    margin-top:56px;
+    opacity:0;
+    transform:translateY(16px);
+    transition:opacity .8s ease, transform .8s ease;
+  }
+  .celebration.show{ opacity:1; transform:translateY(0); }
+  .cake{
+    font-size:56px;
+    display:block;
+    margin-bottom:14px;
+  }
+  .celebration h2{
+    font-family:'Cormorant Garamond', serif;
+    font-size:32px;
+    color:var(--rose-deep);
+    margin:0 0 10px;
+  }
+  .celebration p{
+    font-size:15px;
+    color:#6b5b61;
+    line-height:1.7;
+    max-width:420px;
+    margin:0 auto;
+  }
+
+  .confetti{
+    position:fixed;
+    top:-20px;
+    width:8px; height:8px;
+    border-radius:2px;
+    z-index:5;
+    pointer-events:none;
+    animation:confettiFall 2.6s ease-in forwards;
+  }
+  @keyframes confettiFall{
+    0%{ transform:translateY(0) rotate(0deg); opacity:1;}
+    100%{ transform:translateY(100vh) rotate(560deg); opacity:0;}
+  }
+
+  footer{
+    text-align:center;
+    font-size:11px;
+    color:#a4949a;
+    letter-spacing:.1em;
+    margin-top:70px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{ animation-duration:.001s !important; animation-iteration-count:1 !important; transition-duration:.001s !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <h1>Dinora</h1>
+  <p class="subtitle">Sen uchun — yangi bir yosh yaqinlashmoqda, tabriklarim tayyor turibdi!</p>
+
+  <div class="countdown" id="countdown">
+    <div class="cbox"><div class="num" id="days">00</div><div class="lbl">Kun</div></div>
+    <div class="cbox"><div class="num" id="hours">00</div><div class="lbl">Soat</div></div>
+    <div class="cbox"><div class="num" id="mins">00</div><div class="lbl">Daqiqa</div></div>
+    <div class="cbox"><div class="num" id="secs">00</div><div class="lbl">Soniya</div></div>
+  </div>
+  <div class="countdown-caption" id="countdown-caption">tug'ilgan kuningga qolgan vaqt</div>
+
+  <div class="garden-section">
+    <div class="garden-title">Bir urug' ek</div>
+    <div class="garden-hint">tugmani bos — u tez orada gullab chiqadi</div>
+
+    <div class="garden">
+      <div class="sky-glow"></div>
+      <div class="moon-halo"></div>
+      <div class="stars" id="stars"></div>
+      <div class="grass-blades"></div>
+      <div class="bee" id="bee">🐝</div>
+      <div class="butterfly" id="butterfly">🦋</div>
+      <svg class="windmill" viewBox="0 0 64 100" fill="none">
+        <rect x="24" y="34" width="16" height="66" fill="#4a4038"/>
+        <polygon points="22,34 42,34 37,22 27,22" fill="#f2ede2"/>
+        <circle cx="32" cy="24" r="3" fill="#3E5F45"/>
+        <line x1="32" y1="24" x2="14" y2="8" stroke="#3E5F45" stroke-width="3" stroke-linecap="round"/>
+        <line x1="32" y1="24" x2="50" y2="8" stroke="#3E5F45" stroke-width="3" stroke-linecap="round"/>
+        <line x1="32" y1="24" x2="50" y2="40" stroke="#3E5F45" stroke-width="3" stroke-linecap="round"/>
+        <line x1="32" y1="24" x2="14" y2="40" stroke="#3E5F45" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+
+      <div class="plot" data-idx="1">
+        <div class="soil-mound"></div>
+        <div class="seed"></div>
+        <div class="plant">
+          <div class="stem"></div>
+          <div class="leaf l1"></div>
+          <div class="leaf l2"></div>
+          <div class="bloom">
+            <div class="petal-shape"></div>
+            <div class="petal-shape"></div>
+            <div class="petal-shape"></div>
+            <div class="petal-shape"></div>
+            <div class="petal-shape"></div>
+            <div class="bloom-center">
+              <div class="inner-petal"></div>
+              <div class="inner-petal"></div>
+              <div class="inner-petal"></div>
+              <div class="inner-petal"></div>
+              <div class="inner-petal"></div>
+            </div>
+            <div class="bloom-core"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="plot" data-idx="2">
+        <div class="soil-mound"></div>
+        <div class="seed"></div>
+        <div class="plant">
+          <div class="stem"></div>
+          <div class="leaf l1"></div>
+          <div class="leaf l2"></div>
+          <div class="bloom">
+            <div class="petal-shape"></div>
+            <div class="petal-shape"></div>
+            <div class="petal-shape"></div>
+            <div class="petal-shape"></div>
+            <div class="petal-shape"></div>
+            <div class="bloom-center">
+              <div class="inner-petal"></div>
+              <div class="inner-petal"></div>
+              <div class="inner-petal"></div>
+              <div class="inner-petal"></div>
+              <div class="inner-petal"></div>
+            </div>
+            <div class="bloom-core"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="plot" data-idx="3">
+        <div class="soil-mound"></div>
+        <div class="seed"></div>
+        <div class="plant">
+          <div class="stem"></div>
+          <div class="leaf l1"></div>
+          <div class="leaf l2"></div>
+          <div class="bloom">
+            <div class="petal-shape"></div>
+            <div class="petal-shape"></div>
+            <div class="petal-shape"></div>
+            <div class="petal-shape"></div>
+            <div class="petal-shape"></div>
+            <div class="bloom-center">
+              <div class="inner-petal"></div>
+              <div class="inner-petal"></div>
+              <div class="inner-petal"></div>
+              <div class="inner-petal"></div>
+              <div class="inner-petal"></div>
+            </div>
+            <div class="bloom-core"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="plot" data-idx="4">
+        <div class="soil-mound"></div>
+        <div class="seed"></div>
+        <div class="plant">
+          <div class="stem"></div>
+          <div class="leaf l1"></div>
+          <div class="leaf l2"></div>
+          <div class="bloom">
+            <div class="petal-shape"></div>
+            <div class="petal-shape"></div>
+            <div class="petal-shape"></div>
+            <div class="petal-shape"></div>
+            <div class="petal-shape"></div>
+            <div class="bloom-center">
+              <div class="inner-petal"></div>
+              <div class="inner-petal"></div>
+              <div class="inner-petal"></div>
+              <div class="inner-petal"></div>
+              <div class="inner-petal"></div>
+            </div>
+            <div class="bloom-core"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="plant-btn" id="plantBtn">Urug' ekish 🌱</button>
+  </div>
+
+  <div class="celebration" id="celebration">
+    <span class="cake">🎂</span>
+    <h2>Tug'ilgan kuning muborak bo'lsin, Dinora!</h2>
+    <p>Bu gul qanchalik tez o'sib gullagan bo'lsa, hayoting ham shunchalik yorqin, baxtli va gullab-yashnagan bo'lsin. Yangi yoshing senga omad, sog'lik, quvonchli kunlar va sevimli kitoblaringdek chuqur va qiziqarli hikoyalar keltirsin! 🌸📖</p>
+  </div>
+
+  <footer>10.08.2009</footer>
+  <footer>I ❤️ U</footer>
+</div>
+
+<script>
+  // ambient petals
+  const petalEmojis = ['🌸','🌼','🌷','🌺','📖'];
+  const petalLayer = document.body;
+  function spawnPetal(){
+    const p = document.createElement('div');
+    p.className='petal';
+    p.textContent = petalEmojis[Math.floor(Math.random()*petalEmojis.length)];
+    p.style.left = Math.random()*100+'vw';
+    const dur = 8+Math.random()*8;
+    p.style.animationDuration = dur+'s';
+    p.style.fontSize = (14+Math.random()*14)+'px';
+    petalLayer.appendChild(p);
+    setTimeout(()=>p.remove(), dur*1000+500);
+  }
+  setInterval(spawnPetal, 900);
+  for(let i=0;i<6;i++) setTimeout(spawnPetal, i*300);
+
+  // live countdown to next Aug 10 birthday
+  function nextBirthday(){
+    const now = new Date();
+    let year = now.getFullYear();
+    let target = new Date(year, 7, 10, 0,0,0); // month index 7 = August
+    if(target.getTime() <= now.getTime()){
+      target = new Date(year+1, 7, 10, 0,0,0);
+    }
+    return target;
+  }
+
+  const daysEl = document.getElementById('days');
+  const hoursEl = document.getElementById('hours');
+  const minsEl = document.getElementById('mins');
+  const secsEl = document.getElementById('secs');
+  const captionEl = document.getElementById('countdown-caption');
+
+  function pad(n){ return n.toString().padStart(2,'0'); }
+
+  function tick(){
+    const now = new Date();
+    const target = nextBirthday();
+    let diff = target - now;
+
+    if(diff <= 0){
+      daysEl.textContent = '00';
+      hoursEl.textContent='00';
+      minsEl.textContent='00';
+      secsEl.textContent='00';
+      captionEl.textContent = "Bugun tug'ilgan kun! 🎉";
+      return;
+    }
+    const d = Math.floor(diff/(1000*60*60*24));
+    diff -= d*(1000*60*60*24);
+    const h = Math.floor(diff/(1000*60*60));
+    diff -= h*(1000*60*60);
+    const m = Math.floor(diff/(1000*60));
+    diff -= m*(1000*60);
+    const s = Math.floor(diff/1000);
+
+    daysEl.textContent = pad(d);
+    hoursEl.textContent = pad(h);
+    minsEl.textContent = pad(m);
+    secsEl.textContent = pad(s);
+    captionEl.textContent = "tug'ilgan kuningga qolgan vaqt";
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  // seed planting interaction — grows all 4 flowers together
+  const plantBtn = document.getElementById('plantBtn');
+  const plots = document.querySelectorAll('.plot');
+  const celebration = document.getElementById('celebration');
+
+  function launchConfetti(){
+    const colors = ['#D8283C','#CC9A4A','#5F8365','#F2A0AC','#F3E9D6'];
+    for(let i=0;i<60;i++){
+      setTimeout(()=>{
+        const c = document.createElement('div');
+        c.className='confetti';
+        c.style.left = Math.random()*100+'vw';
+        c.style.background = colors[Math.floor(Math.random()*colors.length)];
+        c.style.borderRadius = Math.random()>0.5 ? '50%':'2px';
+        document.body.appendChild(c);
+        setTimeout(()=>c.remove(), 2800);
+      }, i*30);
+    }
+  }
+
+  // real-time day/night theme for the garden
+  function applyTimeOfDay(){
+    const h = new Date().getHours();
+    const isDay = h >= 6 && h < 19;
+    document.body.setAttribute('data-time', isDay ? 'day' : 'night');
+    return isDay;
+  }
+  function renderStars(){
+    const isDay = applyTimeOfDay();
+    const starsEl = document.getElementById('stars');
+    starsEl.innerHTML = '';
+    if(!isDay){
+      for(let i=0;i<28;i++){
+        const s = document.createElement('div');
+        s.className='star';
+        s.style.left = Math.random()*94+'%';
+        s.style.top = Math.random()*80+'%';
+        s.style.opacity = (0.4+Math.random()*0.6).toFixed(2);
+        starsEl.appendChild(s);
+      }
+    }
+  }
+  renderStars();
+  setInterval(renderStars, 5*60*1000); // re-check every 5 minutes for real-time accuracy
+
+  // realistic flower color palettes (petal tone; center stays golden like real stamens)
+  // pastel bouquet palette — blush, peach, dusty blue, cream (dahlia & garden-rose style)
+  const flowerPalettes = [
+    '#F0B8B0', // och pushti (blush)
+    '#F2A377', // shaftoli/olcha rangi (peach)
+    '#E0919C', // chang atirgul (dusty rose)
+    '#D8A8C8', // yumshoq siyren
+    '#A8B4E0', // chang ko'k (dusty blue)
+    '#FBF3E6', // krem
+    '#E8C9A0', // shampan
+  ];
+  const flowerTypes = ['type-rose','type-rose','type-rose','type-tulip'];
+  function randomColor(){
+    return flowerPalettes[Math.floor(Math.random()*flowerPalettes.length)];
+  }
+  function randomType(){
+    return flowerTypes[Math.floor(Math.random()*flowerTypes.length)];
+  }
+
+  plantBtn.addEventListener('click', () => {
+    plantBtn.classList.add('hidden');
+
+    plots.forEach((plot, i) => {
+      const seed = plot.querySelector('.seed');
+      const soil = plot.querySelector('.soil-mound');
+      const plant = plot.querySelector('.plant');
+      const bloom = plot.querySelector('.bloom');
+      const stagger = i * 180;
+
+      plot.style.setProperty('--flower-color', randomColor());
+      bloom.classList.remove('type-rose','type-daisy','type-tulip');
+      bloom.classList.add(randomType());
+
+      setTimeout(() => seed.classList.add('drop'), stagger);
+      setTimeout(() => {
+        soil.classList.add('show');
+        plant.classList.add('grow');
+      }, stagger + 700);
+    });
+
+    setTimeout(()=>{
+      celebration.classList.add('show');
+      launchConfetti();
+      document.getElementById('bee').classList.add('active');
+      document.getElementById('butterfly').classList.add('active');
+    }, 700 + 3*180 + 3400);
+  });
+</script>
+
+</body>
+</html>
