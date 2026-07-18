@@ -9,7 +9,7 @@
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=15&pause=1000&color=00FF2B&center=true&vCenter=true&multiline=true&repeat=false&random=false&width=950&height=75&lines=Ismim+Mustafo+Rahim,+Android+va+Backend+dasturchisiman" alt="Typing SVG" />
 </a>
 
-![Stars](https://img.shields.io/badge/Total%20Stars-36-yellow?style=flat-square)
+![Stars](https://img.shields.io/badge/Total%20Stars-37-yellow?style=flat-square)
 
 </div>
 
