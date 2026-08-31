@@ -1,11 +1,11 @@
 """
 update_readme.py
-Fetches public GitHub repositories automatically
-and updates README.md with a clean profile layout.
+Fetches public GitHub repositories and updates README.md.
 """
 
 import os
 import sys
+
 import requests
 
 GITHUB_USERNAME = "rahim-mustafo-x"
@@ -14,19 +14,13 @@ YOUTUBE_URL = "https://www.youtube.com/@rahim.mustafo.x"
 
 TOKEN = os.environ.get("GH_TOKEN")
 
-# ============================================================
-
-# CONFIGURATION
-
-# ============================================================
+# GitHub API headers
 
 HEADERS = {
+"Authorization": f"Bearer {TOKEN}",
 "Accept": "application/vnd.github+json",
 "X-GitHub-Api-Version": "2022-11-28",
 }
-
-if TOKEN:
-HEADERS["Authorization"] = f"Bearer {TOKEN}"
 
 # ============================================================
 
@@ -78,14 +72,10 @@ CUSTOM_DISPLAY_NAMES = {
 # ============================================================
 
 def get_all_repos():
-"""
-Fetch all public repositories owned by the user.
-"""
-
-```
 repos = []
 page = 1
 
+```
 while True:
     url = (
         "https://api.github.com/user/repos"
@@ -107,14 +97,18 @@ while True:
         if response.status_code != 200:
             print(
                 f"Repos fetch failed: "
-                f"{response.status_code} {response.text}",
+                f"{response.status_code} "
+                f"{response.text}",
                 file=sys.stderr,
             )
             break
 
         data = response.json()
 
-        if not isinstance(data, list) or not data:
+        if not isinstance(data, list):
+            break
+
+        if not data:
             break
 
         repos.extend(data)
@@ -122,7 +116,7 @@ while True:
 
     except requests.RequestException as error:
         print(
-            f"Network error fetching repositories: {error}",
+            f"Network error: {error}",
             file=sys.stderr,
         )
         break
@@ -137,140 +131,151 @@ return repos
 # ============================================================
 
 def should_ignore_repo(repo):
-"""
-Returns True when a repository should not be displayed.
-"""
-
-```
 name = repo.get("name", "")
 name_lower = name.lower()
 
-# Never show private repositories
+```
+# Never display private repositories
 if repo.get("private", False):
     return True
 
-# Ignore the GitHub profile repository itself
+# Do not display profile repository
 if name_lower == GITHUB_USERNAME.lower():
     return True
 
-# Ignore explicitly listed repositories
+# Explicit ignored repositories
 if name_lower in IGNORED_REPOS:
     return True
 
-# Ignore repositories containing forbidden keywords
-if any(keyword in name_lower for keyword in IGNORED_KEYWORDS):
-    return True
+# Ignore repositories containing ignored keywords
+for keyword in IGNORED_KEYWORDS:
+    if keyword in name_lower:
+        return True
 
 return False
 ```
 
 # ============================================================
 
-# FORMAT REPOSITORY NAMES
+# FORMAT REPOSITORY NAME
 
 # ============================================================
 
 def format_repo_name(name):
-"""
-Convert repository names into readable titles.
+cleaned_name = name.replace("_", " ")
+cleaned_name = cleaned_name.replace("-", " ")
 
 ```
-Examples:
-    my_example -> My Example
-    my-example -> My Example
-    cool_backend -> Cool Backend
-"""
-
-cleaned_name = name.replace("_", " ").replace("-", " ")
-
 return cleaned_name.title()
 ```
 
 def get_display_name(repo_name):
-"""
-Return custom display name when available.
-Otherwise generate one automatically.
-"""
+if repo_name in CUSTOM_DISPLAY_NAMES:
+return CUSTOM_DISPLAY_NAMES[repo_name]
 
 ```
-return CUSTOM_DISPLAY_NAMES.get(
-    repo_name,
-    format_repo_name(repo_name),
-)
+return format_repo_name(repo_name)
 ```
 
 # ============================================================
 
-# STATISTICS
+# GET TOTAL STARS
 
 # ============================================================
 
 def get_total_stars(repositories):
-"""
-Calculate total stars from visible repositories.
-"""
+total_stars = 0
 
 ```
-return sum(
-    repo.get("stargazers_count", 0)
-    for repo in repositories
-    if not should_ignore_repo(repo)
-)
+for repo in repositories:
+    if should_ignore_repo(repo):
+        continue
+
+    total_stars += repo.get(
+        "stargazers_count",
+        0,
+    )
+
+return total_stars
 ```
 
 # ============================================================
 
-# BUILD PROJECT TABLE
+# BUILD PROJECTS TABLE
 
 # ============================================================
 
 def build_projects_table(repositories):
-"""
-Build the public projects markdown table.
-"""
+rows = [
+"| Repository | Tech Stack / Main Language | Stars | Forks |",
+"|---|---|:---:|:---:|",
+]
 
 ```
-rows = [
-    "| Repository | Tech Stack / Main Language | Stars | Forks |",
-    "|---|---|:---:|:---:|",
-]
+visible_repositories = []
 
-visible_repos = [
-    repo
-    for repo in repositories
-    if not should_ignore_repo(repo)
-]
+for repo in repositories:
+    if should_ignore_repo(repo):
+        continue
 
-if not visible_repos:
-    return "_No public repositories found._"
+    visible_repositories.append(repo)
 
-visible_repos.sort(
-    key=lambda repo: repo.get("updated_at", ""),
+visible_repositories.sort(
+    key=lambda repo: repo.get(
+        "updated_at",
+        "",
+    ),
     reverse=True,
 )
 
-for repo in visible_repos:
+if not visible_repositories:
+    return "_No public repositories found._"
+
+for repo in visible_repositories:
     repo_name = repo.get("name", "")
-    display_name = get_display_name(repo_name)
 
-    repo_url = repo.get("html_url", "")
-    stars_count = repo.get("stargazers_count", 0)
-    forks_count = repo.get("forks_count", 0)
+    display_name = get_display_name(
+        repo_name
+    )
 
-    stars = f"⭐ {stars_count}" if stars_count > 0 else "—"
-    forks = f"🍴 {forks_count}" if forks_count > 0 else "—"
+    repo_url = repo.get(
+        "html_url",
+        "",
+    )
+
+    stars_count = repo.get(
+        "stargazers_count",
+        0,
+    )
+
+    forks_count = repo.get(
+        "forks_count",
+        0,
+    )
 
     tech_stack = CUSTOM_STACKS.get(
         repo_name,
         repo.get("language") or "General",
     )
 
-    rows.append(
+    if stars_count > 0:
+        stars = f"⭐ {stars_count}"
+    else:
+        stars = "—"
+
+    if forks_count > 0:
+        forks = f"🍴 {forks_count}"
+    else:
+        forks = "—"
+
+    row = (
         f"| [**{display_name}**]({repo_url}) "
         f"| `{tech_stack}` "
         f"| {stars} "
         f"| {forks} |"
     )
+
+    rows.append(row)
 
 return "\n".join(rows)
 ```
@@ -282,13 +287,14 @@ return "\n".join(rows)
 # ============================================================
 
 def build_readme(repositories):
-"""
-Generate the complete README.md content.
-"""
+total_stars = get_total_stars(
+repositories
+)
 
 ```
-total_stars = get_total_stars(repositories)
-projects_table = build_projects_table(repositories)
+projects_table = build_projects_table(
+    repositories
+)
 
 typing_header = (
     "https://readme-typing-svg.demolab.com"
@@ -315,8 +321,6 @@ typing_cmd = (
     "&color=00FF2B"
     "&center=true"
     "&vCenter=true"
-    "&multiline=false"
-    "&repeat=true"
     "&width=700"
     "&height=40"
     "&lines="
@@ -398,18 +402,16 @@ return "\n".join(lines)
 # ============================================================
 
 def update_readme():
-"""
-Fetch repositories and update README.md.
-"""
-
-```
 repositories = get_all_repos()
 
-visible_repositories = [
-    repo
-    for repo in repositories
-    if not should_ignore_repo(repo)
-]
+```
+visible_repositories = []
+
+for repo in repositories:
+    if should_ignore_repo(repo):
+        continue
+
+    visible_repositories.append(repo)
 
 print(
     f"Fetched {len(repositories)} repositories from GitHub."
@@ -419,12 +421,20 @@ print(
     f"Showing {len(visible_repositories)} repositories in README."
 )
 
-readme_content = build_readme(repositories)
+readme_content = build_readme(
+    repositories
+)
 
-with open("README.md", "w", encoding="utf-8") as file:
+with open(
+    "README.md",
+    "w",
+    encoding="utf-8",
+) as file:
     file.write(readme_content)
 
-total_stars = get_total_stars(repositories)
+total_stars = get_total_stars(
+    repositories
+)
 
 print("README.md successfully updated!")
 print(f"Total Stars: {total_stars}")
