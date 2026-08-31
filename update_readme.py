@@ -115,6 +115,39 @@ def get_all_repos():
 
 
 # ============================================================
+# FETCH USER PROFILE (for follower count)
+# ============================================================
+
+def get_user_profile():
+    url = f"https://api.github.com/users/{GITHUB_USERNAME}"
+
+    try:
+        response = requests.get(
+            url,
+            headers=HEADERS,
+            timeout=15,
+        )
+
+        if response.status_code != 200:
+            print(
+                f"User profile fetch failed: "
+                f"{response.status_code} "
+                f"{response.text}",
+                file=sys.stderr,
+            )
+            return {}
+
+        return response.json()
+
+    except requests.RequestException as error:
+        print(
+            f"Network error: {error}",
+            file=sys.stderr,
+        )
+        return {}
+
+
+# ============================================================
 # FILTER REPOSITORIES
 # ============================================================
 
@@ -177,6 +210,129 @@ def get_total_stars(repositories):
         )
 
     return total_stars
+
+
+def get_total_forks(repositories):
+    total_forks = 0
+
+    for repo in repositories:
+        if should_ignore_repo(repo):
+            continue
+
+        total_forks += repo.get(
+            "forks_count",
+            0,
+        )
+
+    return total_forks
+
+
+# ============================================================
+# LANGUAGE COLORS (for shields.io badges)
+# ============================================================
+
+LANGUAGE_COLORS = {
+    "Kotlin": "7F52FF",
+    "Java": "ED8B00",
+    "Python": "3776AB",
+    "JavaScript": "F7DF1E",
+    "TypeScript": "3178C6",
+    "Dart": "0175C2",
+    "Swift": "FA7343",
+    "C++": "00599C",
+    "C": "A8B9CC",
+    "C#": "239120",
+    "Go": "00ADD8",
+    "Rust": "000000",
+    "PHP": "777BB4",
+    "Ruby": "CC342D",
+    "HTML": "E34F26",
+    "CSS": "1572B6",
+    "Shell": "89E051",
+}
+
+DEFAULT_LANGUAGE_COLOR = "6E7681"
+
+
+def build_language_breakdown(repositories):
+    counts = {}
+
+    for repo in repositories:
+        if should_ignore_repo(repo):
+            continue
+
+        language = repo.get("language")
+
+        if not language:
+            continue
+
+        counts[language] = counts.get(language, 0) + 1
+
+    if not counts:
+        return "_No language data available._"
+
+    total = sum(counts.values())
+
+    sorted_languages = sorted(
+        counts.items(),
+        key=lambda item: item[1],
+        reverse=True,
+    )
+
+    badges = []
+
+    for language, count in sorted_languages:
+        percent = round((count / total) * 100)
+        color = LANGUAGE_COLORS.get(
+            language,
+            DEFAULT_LANGUAGE_COLOR,
+        )
+        label = language.replace(" ", "_").replace("-", "--")
+
+        badge = (
+            f"![{language}](https://img.shields.io/badge/"
+            f"{label}-{percent}%25-{color}?style=flat-square)"
+        )
+
+        badges.append(badge)
+
+    return " ".join(badges)
+
+
+# ============================================================
+# RECENT ACTIVITY (self-computed, no external service)
+# ============================================================
+
+def build_recent_activity(repositories, limit=5):
+    visible_repositories = []
+
+    for repo in repositories:
+        if should_ignore_repo(repo):
+            continue
+
+        visible_repositories.append(repo)
+
+    visible_repositories.sort(
+        key=lambda repo: repo.get("updated_at", ""),
+        reverse=True,
+    )
+
+    if not visible_repositories:
+        return "_No recent activity._"
+
+    lines = []
+
+    for repo in visible_repositories[:limit]:
+        repo_name = repo.get("name", "")
+        display_name = get_display_name(repo_name)
+        repo_url = repo.get("html_url", "")
+        updated_at = repo.get("updated_at", "")[:10]
+
+        lines.append(
+            f"- [**{display_name}**]({repo_url}) — updated `{updated_at}`"
+        )
+
+    return "\n".join(lines)
 
 
 # ============================================================
@@ -261,55 +417,46 @@ def build_projects_table(repositories):
 # BUILD README
 # ============================================================
 
-def build_readme(repositories):
+def build_readme(repositories, user_profile=None):
+    if user_profile is None:
+        user_profile = {}
+
     total_stars = get_total_stars(
         repositories
+    )
+
+    total_forks = get_total_forks(
+        repositories
+    )
+
+    total_repos = user_profile.get(
+        "public_repos",
+        len([r for r in repositories if not should_ignore_repo(r)]),
     )
 
     projects_table = build_projects_table(
         repositories
     )
 
-    typing_header = (
-        "https://readme-typing-svg.demolab.com"
-        "?font=Fira+Code"
-        "&weight=600"
-        "&size=24"
-        "&pause=1000"
-        "&color=00FF2B"
-        "&center=true"
-        "&vCenter=true"
-        "&width=600"
-        "&lines="
-        "Assalomu+Aleykum!+👋;"
-        "Men+Mustafo+Rahim;"
-        "Android+va+Backend+Dasturchiman"
+    language_breakdown = build_language_breakdown(
+        repositories
     )
 
-    typing_cmd = (
-        "https://readme-typing-svg.demolab.com"
-        "?font=Fira+Code"
-        "&size=13"
-        "&duration=3000"
-        "&pause=500"
-        "&color=00FF2B"
-        "&center=true"
-        "&vCenter=true"
-        "&width=700"
-        "&height=40"
-        "&lines="
-        "%24+sudo+apt+install+creativity;"
-        "%24+git+clone+rahim-mustafo-x;"
-        "%24+./run.sh+%5BSuccess%5D"
+    recent_activity = build_recent_activity(
+        repositories
     )
 
     lines = [
         '<div align="center">',
         '  <img src="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake-dark.svg" alt="Snake animation" width="100%" />',
         '  <br/><br/>',
-        f'  <img src="{typing_header}" alt="Typing Header" />',
+        '  <h2>👋 Assalomu Aleykum! Men Mustafo Rahim</h2>',
+        '  <h3>💻 Android va Backend Dasturchiman</h3>',
         '  <br/>',
         f'  <img src="https://img.shields.io/badge/Total%20Stars-{total_stars}-00FF2B?style=for-the-badge&logo=github&logoColor=black&labelColor=101010" alt="Total Stars" />',
+        f'  <img src="https://img.shields.io/badge/Public%20Repos-{total_repos}-00FF2B?style=for-the-badge&logo=github&logoColor=black&labelColor=101010" alt="Public Repos" />',
+        f'  <img src="https://img.shields.io/badge/Total%20Forks-{total_forks}-00FF2B?style=for-the-badge&logo=github&logoColor=black&labelColor=101010" alt="Total Forks" />',
+        f'  <img src="https://img.shields.io/github/followers/{GITHUB_USERNAME}?style=for-the-badge&logo=github&logoColor=black&labelColor=101010&color=00FF2B&label=Followers" alt="Followers" />',
         '</div>',
         '',
         '---',
@@ -326,18 +473,15 @@ def build_readme(repositories):
         '',
         '---',
         '',
-        '<div align="center">',
-        f'  <img src="{typing_cmd}" alt="Terminal Animation" />',
-        '</div>',
-        '',
         '## 📊 GitHub Statistics',
         '',
-        f'![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username={GITHUB_USERNAME}&theme=github-compact&bg_color=0D1117&hide_border=true&line=00FF2B&point=00FF2B&color=00FF2B&title_color=00FF2B&area=true)',
+        '### Language Breakdown (by repositories)',
         '',
-        '<div align="center">',
-        f'  <img src="https://github-readme-stats.vercel.app/api/top-langs?username={GITHUB_USERNAME}&show_icons=true&locale=en&layout=compact&langs_count=8&title_color=00FF2B&text_color=ffffff&bg_color=0D1117&hide_border=true" alt="Top Languages" height="165" />',
-        f'  <img src="https://github-readme-stats.vercel.app/api?username={GITHUB_USERNAME}&show_icons=true&locale=en&title_color=00FF2B&text_color=ffffff&bg_color=0D1117&hide_border=true&include_all_commits=true" alt="GitHub Stats" height="165" />',
-        '</div>',
+        language_breakdown,
+        '',
+        '### 🕒 Recently Active',
+        '',
+        recent_activity,
         '',
         '---',
         '',
@@ -375,6 +519,7 @@ def build_readme(repositories):
 
 def update_readme():
     repositories = get_all_repos()
+    user_profile = get_user_profile()
 
     visible_repositories = []
 
@@ -393,7 +538,8 @@ def update_readme():
     )
 
     readme_content = build_readme(
-        repositories
+        repositories,
+        user_profile,
     )
 
     with open(
