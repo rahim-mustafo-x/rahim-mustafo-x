@@ -1,9 +1,13 @@
 <div align="center">
   <img src="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake-dark.svg" alt="Snake animation" width="100%" />
   <br/><br/>
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&color=00FF2B&center=true&vCenter=true&width=600&lines=Assalomu+Aleykum!+👋;Men+Mustafo+Rahim;Android+va+Backend+Dasturchiman" alt="Typing Header" />
+  <h2>👋 Assalomu Aleykum! Men Mustafo Rahim</h2>
+  <h3>💻 Android va Backend Dasturchiman</h3>
   <br/>
   <img src="https://img.shields.io/badge/Total%20Stars-6-00FF2B?style=for-the-badge&logo=github&logoColor=black&labelColor=101010" alt="Total Stars" />
+  <img src="https://img.shields.io/badge/Public%20Repos-13-00FF2B?style=for-the-badge&logo=github&logoColor=black&labelColor=101010" alt="Public Repos" />
+  <img src="https://img.shields.io/badge/Total%20Forks-0-00FF2B?style=for-the-badge&logo=github&logoColor=black&labelColor=101010" alt="Total Forks" />
+  <img src="https://img.shields.io/github/followers/rahim-mustafo-x?style=for-the-badge&logo=github&logoColor=black&labelColor=101010&color=00FF2B&label=Followers" alt="Followers" />
 </div>
 
 ---
@@ -20,18 +24,19 @@
 
 ---
 
-<div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=13&duration=3000&pause=500&color=00FF2B&center=true&vCenter=true&width=700&height=40&lines=%24+sudo+apt+install+creativity;%24+git+clone+rahim-mustafo-x;%24+./run.sh+%5BSuccess%5D" alt="Terminal Animation" />
-</div>
-
 ## 📊 GitHub Statistics
 
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=rahim-mustafo-x&theme=github-compact&bg_color=0D1117&hide_border=true&line=00FF2B&point=00FF2B&color=00FF2B&title_color=00FF2B&area=true)
+### Language Breakdown (by repositories)
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=rahim-mustafo-x&show_icons=true&locale=en&layout=compact&langs_count=8&title_color=00FF2B&text_color=ffffff&bg_color=0D1117&hide_border=true" alt="Top Languages" height="165" />
-  <img src="https://github-readme-stats.vercel.app/api?username=rahim-mustafo-x&show_icons=true&locale=en&title_color=00FF2B&text_color=ffffff&bg_color=0D1117&hide_border=true&include_all_commits=true" alt="GitHub Stats" height="165" />
-</div>
+![Kotlin](https://img.shields.io/badge/Kotlin-50%25-7F52FF?style=flat-square) ![Python](https://img.shields.io/badge/Python-40%25-3776AB?style=flat-square) ![HTML](https://img.shields.io/badge/HTML-10%25-E34F26?style=flat-square)
+
+### 🕒 Recently Active
+
+- [**Maintenance Service Telegram Bot**](https://github.com/rahim-mustafo-x/maintenance-service-telegram-bot) — updated `2026-08-24`
+- [**Foottop Mobile Business**](https://github.com/rahim-mustafo-x/footTop-mobile-business) — updated `2026-08-11`
+- [**Tezbron**](https://github.com/rahim-mustafo-x/tezbron) — updated `2026-07-01`
+- [**Cryptovalyuta**](https://github.com/rahim-mustafo-x/CryptoValyuta) — updated `2026-05-31`
+- [**Translator Telegram Bot**](https://github.com/rahim-mustafo-x/Translator-telegram-bot) — updated `2026-05-31`
 
 ---
 
