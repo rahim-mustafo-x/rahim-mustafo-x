@@ -56,4 +56,3 @@ steps:
       git add README.md
       git commit -m "chore: auto-update README stats"
       git push origin main
-```
