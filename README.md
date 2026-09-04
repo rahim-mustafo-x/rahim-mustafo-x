@@ -32,8 +32,8 @@
 
 ### 🕒 Recently Active
 
+- [**Foottop Mobile Business**](https://github.com/rahim-mustafo-x/footTop-mobile-business) — updated `2026-09-03`
 - [**Maintenance Service Telegram Bot**](https://github.com/rahim-mustafo-x/maintenance-service-telegram-bot) — updated `2026-08-24`
-- [**Foottop Mobile Business**](https://github.com/rahim-mustafo-x/footTop-mobile-business) — updated `2026-08-11`
 - [**Tezbron**](https://github.com/rahim-mustafo-x/tezbron) — updated `2026-07-01`
 - [**Cryptovalyuta**](https://github.com/rahim-mustafo-x/CryptoValyuta) — updated `2026-05-31`
 - [**Translator Telegram Bot**](https://github.com/rahim-mustafo-x/Translator-telegram-bot) — updated `2026-05-31`
@@ -44,8 +44,8 @@
 
 | Repository | Tech Stack / Main Language | Stars | Forks |
 |---|---|:---:|:---:|
-| [**Maintenance Service Telegram Bot**](https://github.com/rahim-mustafo-x/maintenance-service-telegram-bot) | `Python` | — | — |
 | [**Foottop Mobile Business**](https://github.com/rahim-mustafo-x/footTop-mobile-business) | `Kotlin` | — | — |
+| [**Maintenance Service Telegram Bot**](https://github.com/rahim-mustafo-x/maintenance-service-telegram-bot) | `Python` | — | — |
 | [**Tezbron**](https://github.com/rahim-mustafo-x/tezbron) | `General` | — | — |
 | [**Cryptovalyuta**](https://github.com/rahim-mustafo-x/CryptoValyuta) | `Kotlin` | ⭐ 1 | — |
 | [**Translator Telegram Bot**](https://github.com/rahim-mustafo-x/Translator-telegram-bot) | `Python` | — | — |
