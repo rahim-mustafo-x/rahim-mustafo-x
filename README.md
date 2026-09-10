@@ -32,10 +32,10 @@
 
 ### 🕒 Recently Active
 
-- [**Maintenance Service Image Service**](https://github.com/rahim-mustafo-x/maintenance-service-image-service) — updated `2026-09-08`
-- [**Maintenance Service Api Gate Away**](https://github.com/rahim-mustafo-x/maintenance-service-api-gate-away) — updated `2026-09-07`
+- [**Maintenance Service User Service**](https://github.com/rahim-mustafo-x/maintenance-service-user-service) — updated `2026-09-09`
+- [**Maintenance Service Image Service**](https://github.com/rahim-mustafo-x/maintenance-service-image-service) — updated `2026-09-09`
+- [**Maintenance Service Api Gate Away**](https://github.com/rahim-mustafo-x/maintenance-service-api-gate-away) — updated `2026-09-09`
 - [**Foottop Mobile Business**](https://github.com/rahim-mustafo-x/footTop-mobile-business) — updated `2026-09-05`
-- [**Maintenance Service User Service**](https://github.com/rahim-mustafo-x/maintenance-service-user-service) — updated `2026-09-05`
 - [**Maintenance Service Registry**](https://github.com/rahim-mustafo-x/maintenance-service-registry) — updated `2026-09-05`
 
 ---
@@ -44,10 +44,10 @@
 
 | Repository | Tech Stack / Main Language | Stars | Forks |
 |---|---|:---:|:---:|
+| [**Maintenance Service User Service**](https://github.com/rahim-mustafo-x/maintenance-service-user-service) | `Java` | ⭐ 1 | — |
 | [**Maintenance Service Image Service**](https://github.com/rahim-mustafo-x/maintenance-service-image-service) | `Java` | ⭐ 1 | — |
 | [**Maintenance Service Api Gate Away**](https://github.com/rahim-mustafo-x/maintenance-service-api-gate-away) | `Java` | ⭐ 1 | — |
 | [**Foottop Mobile Business**](https://github.com/rahim-mustafo-x/footTop-mobile-business) | `Kotlin` | — | — |
-| [**Maintenance Service User Service**](https://github.com/rahim-mustafo-x/maintenance-service-user-service) | `Java` | ⭐ 1 | — |
 | [**Maintenance Service Registry**](https://github.com/rahim-mustafo-x/maintenance-service-registry) | `Java` | ⭐ 1 | — |
 | [**Maintenance Service Telegram Bot**](https://github.com/rahim-mustafo-x/maintenance-service-telegram-bot) | `Python` | ⭐ 1 | — |
 | [**Tezbron**](https://github.com/rahim-mustafo-x/tezbron) | `General` | — | — |
