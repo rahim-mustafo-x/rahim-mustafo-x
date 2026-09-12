@@ -5,7 +5,7 @@
   <h3>💻 Android va Backend Dasturchiman</h3>
   <br/>
   <img src="https://img.shields.io/badge/Total%20Stars-11-00FF2B?style=for-the-badge&logo=github&logoColor=black&labelColor=101010" alt="Total Stars" />
-  <img src="https://img.shields.io/badge/Public%20Repos-17-00FF2B?style=for-the-badge&logo=github&logoColor=black&labelColor=101010" alt="Public Repos" />
+  <img src="https://img.shields.io/badge/Public%20Repos-18-00FF2B?style=for-the-badge&logo=github&logoColor=black&labelColor=101010" alt="Public Repos" />
   <img src="https://img.shields.io/badge/Total%20Forks-0-00FF2B?style=for-the-badge&logo=github&logoColor=black&labelColor=101010" alt="Total Forks" />
   <img src="https://img.shields.io/github/followers/rahim-mustafo-x?style=for-the-badge&logo=github&logoColor=black&labelColor=101010&color=00FF2B&label=Followers" alt="Followers" />
 </div>
@@ -28,15 +28,15 @@
 
 ### Language Breakdown (by repositories)
 
-![Kotlin](https://img.shields.io/badge/Kotlin-36%25-7F52FF?style=flat-square) ![Java](https://img.shields.io/badge/Java-29%25-ED8B00?style=flat-square) ![Python](https://img.shields.io/badge/Python-29%25-3776AB?style=flat-square) ![HTML](https://img.shields.io/badge/HTML-7%25-E34F26?style=flat-square)
+![Java](https://img.shields.io/badge/Java-33%25-ED8B00?style=flat-square) ![Kotlin](https://img.shields.io/badge/Kotlin-33%25-7F52FF?style=flat-square) ![Python](https://img.shields.io/badge/Python-27%25-3776AB?style=flat-square) ![HTML](https://img.shields.io/badge/HTML-7%25-E34F26?style=flat-square)
 
 ### 🕒 Recently Active
 
+- [**Maintenance Service Job Service**](https://github.com/rahim-mustafo-x/maintenance-service-job-service) — updated `2026-09-11`
 - [**Maintenance Service User Service**](https://github.com/rahim-mustafo-x/maintenance-service-user-service) — updated `2026-09-09`
 - [**Maintenance Service Image Service**](https://github.com/rahim-mustafo-x/maintenance-service-image-service) — updated `2026-09-09`
 - [**Maintenance Service Api Gate Away**](https://github.com/rahim-mustafo-x/maintenance-service-api-gate-away) — updated `2026-09-09`
 - [**Foottop Mobile Business**](https://github.com/rahim-mustafo-x/footTop-mobile-business) — updated `2026-09-05`
-- [**Maintenance Service Registry**](https://github.com/rahim-mustafo-x/maintenance-service-registry) — updated `2026-09-05`
 
 ---
 
@@ -44,6 +44,7 @@
 
 | Repository | Tech Stack / Main Language | Stars | Forks |
 |---|---|:---:|:---:|
+| [**Maintenance Service Job Service**](https://github.com/rahim-mustafo-x/maintenance-service-job-service) | `Java` | — | — |
 | [**Maintenance Service User Service**](https://github.com/rahim-mustafo-x/maintenance-service-user-service) | `Java` | ⭐ 1 | — |
 | [**Maintenance Service Image Service**](https://github.com/rahim-mustafo-x/maintenance-service-image-service) | `Java` | ⭐ 1 | — |
 | [**Maintenance Service Api Gate Away**](https://github.com/rahim-mustafo-x/maintenance-service-api-gate-away) | `Java` | ⭐ 1 | — |
