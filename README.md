@@ -5,7 +5,7 @@
   <h3>💻 Android va Backend Dasturchiman</h3>
   <br/>
   <img src="https://img.shields.io/badge/Total%20Stars-11-00FF2B?style=for-the-badge&logo=github&logoColor=black&labelColor=101010" alt="Total Stars" />
-  <img src="https://img.shields.io/badge/Public%20Repos-18-00FF2B?style=for-the-badge&logo=github&logoColor=black&labelColor=101010" alt="Public Repos" />
+  <img src="https://img.shields.io/badge/Public%20Repos-17-00FF2B?style=for-the-badge&logo=github&logoColor=black&labelColor=101010" alt="Public Repos" />
   <img src="https://img.shields.io/badge/Total%20Forks-0-00FF2B?style=for-the-badge&logo=github&logoColor=black&labelColor=101010" alt="Total Forks" />
   <img src="https://img.shields.io/github/followers/rahim-mustafo-x?style=for-the-badge&logo=github&logoColor=black&labelColor=101010&color=00FF2B&label=Followers" alt="Followers" />
 </div>
@@ -51,7 +51,6 @@
 | [**Foottop Mobile Business**](https://github.com/rahim-mustafo-x/footTop-mobile-business) | `Kotlin` | — | — |
 | [**Maintenance Service Registry**](https://github.com/rahim-mustafo-x/maintenance-service-registry) | `Java` | ⭐ 1 | — |
 | [**Maintenance Service Telegram Bot**](https://github.com/rahim-mustafo-x/maintenance-service-telegram-bot) | `Python` | ⭐ 1 | — |
-| [**Tezbron**](https://github.com/rahim-mustafo-x/tezbron) | `General` | — | — |
 | [**Cryptovalyuta**](https://github.com/rahim-mustafo-x/CryptoValyuta) | `Kotlin` | ⭐ 1 | — |
 | [**Translator Telegram Bot**](https://github.com/rahim-mustafo-x/Translator-telegram-bot) | `Python` | — | — |
 | [**The Sacred Formulas**](https://github.com/rahim-mustafo-x/The-sacred-formulas) | `HTML` | — | — |
