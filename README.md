@@ -28,15 +28,15 @@
 
 ### Language Breakdown (by repositories)
 
-![Java](https://img.shields.io/badge/Java-33%25-ED8B00?style=flat-square) ![Kotlin](https://img.shields.io/badge/Kotlin-33%25-7F52FF?style=flat-square) ![Python](https://img.shields.io/badge/Python-27%25-3776AB?style=flat-square) ![HTML](https://img.shields.io/badge/HTML-7%25-E34F26?style=flat-square)
+![Kotlin](https://img.shields.io/badge/Kotlin-33%25-7F52FF?style=flat-square) ![Java](https://img.shields.io/badge/Java-33%25-ED8B00?style=flat-square) ![Python](https://img.shields.io/badge/Python-27%25-3776AB?style=flat-square) ![HTML](https://img.shields.io/badge/HTML-7%25-E34F26?style=flat-square)
 
 ### 🕒 Recently Active
 
+- [**Muslim Calendar**](https://github.com/rahim-mustafo-x/Muslim_calendar) — updated `2026-09-18`
 - [**Maintenance Service Api Gate Away**](https://github.com/rahim-mustafo-x/maintenance-service-api-gate-away) — updated `2026-09-12`
 - [**Maintenance Service Job Service**](https://github.com/rahim-mustafo-x/maintenance-service-job-service) — updated `2026-09-11`
 - [**Maintenance Service User Service**](https://github.com/rahim-mustafo-x/maintenance-service-user-service) — updated `2026-09-09`
 - [**Maintenance Service Image Service**](https://github.com/rahim-mustafo-x/maintenance-service-image-service) — updated `2026-09-09`
-- [**Foottop Mobile Business**](https://github.com/rahim-mustafo-x/footTop-mobile-business) — updated `2026-09-05`
 
 ---
 
@@ -44,6 +44,7 @@
 
 | Repository | Tech Stack / Main Language | Stars | Forks |
 |---|---|:---:|:---:|
+| [**Muslim Calendar**](https://github.com/rahim-mustafo-x/Muslim_calendar) | `Kotlin, Clean Architecture` | ⭐ 1 | — |
 | [**Maintenance Service Api Gate Away**](https://github.com/rahim-mustafo-x/maintenance-service-api-gate-away) | `Java` | ⭐ 1 | — |
 | [**Maintenance Service Job Service**](https://github.com/rahim-mustafo-x/maintenance-service-job-service) | `Java` | — | — |
 | [**Maintenance Service User Service**](https://github.com/rahim-mustafo-x/maintenance-service-user-service) | `Java` | ⭐ 1 | — |
@@ -54,7 +55,6 @@
 | [**Cryptovalyuta**](https://github.com/rahim-mustafo-x/CryptoValyuta) | `Kotlin` | ⭐ 1 | — |
 | [**Translator Telegram Bot**](https://github.com/rahim-mustafo-x/Translator-telegram-bot) | `Python` | — | — |
 | [**The Sacred Formulas**](https://github.com/rahim-mustafo-x/The-sacred-formulas) | `HTML` | — | — |
-| [**Muslim Calendar**](https://github.com/rahim-mustafo-x/Muslim_calendar) | `Kotlin, Clean Architecture` | ⭐ 1 | — |
 | [**Advertisement Bot**](https://github.com/rahim-mustafo-x/Advertisement_bot) | `Python` | — | — |
 | [**Syncchat**](https://github.com/rahim-mustafo-x/SyncChat) | `Kotlin` | ⭐ 2 | — |
 | [**Cinematelegram Bot**](https://github.com/rahim-mustafo-x/CinemaTelegram_bot) | `Python` | ⭐ 1 | — |
