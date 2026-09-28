@@ -5,7 +5,7 @@
   <h3>💻 Android va Backend Dasturchiman</h3>
   <br/>
   <img src="https://img.shields.io/badge/Total%20Stars-12-00FF2B?style=for-the-badge&logo=github&logoColor=black&labelColor=101010" alt="Total Stars" />
-  <img src="https://img.shields.io/badge/Public%20Repos-18-00FF2B?style=for-the-badge&logo=github&logoColor=black&labelColor=101010" alt="Public Repos" />
+  <img src="https://img.shields.io/badge/Public%20Repos-19-00FF2B?style=for-the-badge&logo=github&logoColor=black&labelColor=101010" alt="Public Repos" />
   <img src="https://img.shields.io/badge/Total%20Forks-0-00FF2B?style=for-the-badge&logo=github&logoColor=black&labelColor=101010" alt="Total Forks" />
   <img src="https://img.shields.io/github/followers/rahim-mustafo-x?style=for-the-badge&logo=github&logoColor=black&labelColor=101010&color=00FF2B&label=Followers" alt="Followers" />
 </div>
@@ -28,15 +28,15 @@
 
 ### Language Breakdown (by repositories)
 
-![Python](https://img.shields.io/badge/Python-38%25-3776AB?style=flat-square) ![Kotlin](https://img.shields.io/badge/Kotlin-31%25-7F52FF?style=flat-square) ![Java](https://img.shields.io/badge/Java-25%25-ED8B00?style=flat-square) ![HTML](https://img.shields.io/badge/HTML-6%25-E34F26?style=flat-square)
+![Python](https://img.shields.io/badge/Python-35%25-3776AB?style=flat-square) ![Kotlin](https://img.shields.io/badge/Kotlin-29%25-7F52FF?style=flat-square) ![Java](https://img.shields.io/badge/Java-24%25-ED8B00?style=flat-square) ![Dockerfile](https://img.shields.io/badge/Dockerfile-6%25-6E7681?style=flat-square) ![HTML](https://img.shields.io/badge/HTML-6%25-E34F26?style=flat-square)
 
 ### 🕒 Recently Active
 
-- [**Maintenance Service Telegram Bot**](https://github.com/rahim-mustafo-x/maintenance-service-telegram-bot) — updated `2026-09-26`
-- [**Maintenance Service Api Gate Away**](https://github.com/rahim-mustafo-x/maintenance-service-api-gate-away) — updated `2026-09-26`
-- [**More Apps**](https://github.com/rahim-mustafo-x/more-apps) — updated `2026-09-26`
-- [**Foottop Mobile Business**](https://github.com/rahim-mustafo-x/footTop-mobile-business) — updated `2026-09-26`
-- [**Maintenance Service Message Service**](https://github.com/rahim-mustafo-x/maintenance-service-message-service) — updated `2026-09-23`
+- [**Maintenance Service Message Service**](https://github.com/rahim-mustafo-x/maintenance-service-message-service) — updated `2026-09-27`
+- [**Maintenance Service Telegram Bot**](https://github.com/rahim-mustafo-x/maintenance-service-telegram-bot) — updated `2026-09-27`
+- [**Maintenance Service Job Service**](https://github.com/rahim-mustafo-x/maintenance-service-job-service) — updated `2026-09-27`
+- [**Maintenance Service User Service**](https://github.com/rahim-mustafo-x/maintenance-service-user-service) — updated `2026-09-27`
+- [**Maintenance Service Image Service**](https://github.com/rahim-mustafo-x/maintenance-service-image-service) — updated `2026-09-27`
 
 ---
 
@@ -44,15 +44,16 @@
 
 | Repository | Tech Stack / Main Language | Stars | Forks |
 |---|---|:---:|:---:|
-| [**Maintenance Service Telegram Bot**](https://github.com/rahim-mustafo-x/maintenance-service-telegram-bot) | `Python` | ⭐ 1 | — |
-| [**Maintenance Service Api Gate Away**](https://github.com/rahim-mustafo-x/maintenance-service-api-gate-away) | `Java` | ⭐ 1 | — |
-| [**More Apps**](https://github.com/rahim-mustafo-x/more-apps) | `Python` | — | — |
-| [**Foottop Mobile Business**](https://github.com/rahim-mustafo-x/footTop-mobile-business) | `Kotlin` | — | — |
 | [**Maintenance Service Message Service**](https://github.com/rahim-mustafo-x/maintenance-service-message-service) | `Python` | ⭐ 1 | — |
+| [**Maintenance Service Telegram Bot**](https://github.com/rahim-mustafo-x/maintenance-service-telegram-bot) | `Python` | ⭐ 1 | — |
+| [**Maintenance Service Job Service**](https://github.com/rahim-mustafo-x/maintenance-service-job-service) | `Dockerfile` | — | — |
 | [**Maintenance Service User Service**](https://github.com/rahim-mustafo-x/maintenance-service-user-service) | `Java` | ⭐ 1 | — |
-| [**Muslim Calendar**](https://github.com/rahim-mustafo-x/Muslim_calendar) | `Kotlin, Clean Architecture` | ⭐ 1 | — |
 | [**Maintenance Service Image Service**](https://github.com/rahim-mustafo-x/maintenance-service-image-service) | `Java` | ⭐ 1 | — |
+| [**Maintenance Service Api Gate Away**](https://github.com/rahim-mustafo-x/maintenance-service-api-gate-away) | `Java` | ⭐ 1 | — |
 | [**Maintenance Service Registry**](https://github.com/rahim-mustafo-x/maintenance-service-registry) | `Java` | ⭐ 1 | — |
+| [**Foottop Mobile Business**](https://github.com/rahim-mustafo-x/footTop-mobile-business) | `Kotlin` | — | — |
+| [**More Apps**](https://github.com/rahim-mustafo-x/more-apps) | `Python` | — | — |
+| [**Muslim Calendar**](https://github.com/rahim-mustafo-x/Muslim_calendar) | `Kotlin, Clean Architecture` | ⭐ 1 | — |
 | [**Cryptovalyuta**](https://github.com/rahim-mustafo-x/CryptoValyuta) | `Kotlin` | ⭐ 1 | — |
 | [**Translator Telegram Bot**](https://github.com/rahim-mustafo-x/Translator-telegram-bot) | `Python` | — | — |
 | [**The Sacred Formulas**](https://github.com/rahim-mustafo-x/The-sacred-formulas) | `HTML` | — | — |
