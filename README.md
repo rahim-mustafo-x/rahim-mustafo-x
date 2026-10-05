@@ -1,8 +1,8 @@
 <div align="center">
   <img src="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake-dark.svg" alt="Snake animation" width="100%" />
   <br/><br/>
-  <h2>👋 Assalomu Aleykum! Men Mustafo Rahim</h2>
-  <h3>💻 Android va Backend Dasturchiman</h3>
+  <h2>👋 Hi! I am Mustafo Rahim</h2>
+  <h3>💻 I am a Backend and Android developer</h3>
   <br/>
   <img src="https://img.shields.io/badge/Total%20Stars-12-00FF2B?style=for-the-badge&logo=github&logoColor=black&labelColor=101010" alt="Total Stars" />
   <img src="https://img.shields.io/badge/Public%20Repos-19-00FF2B?style=for-the-badge&logo=github&logoColor=black&labelColor=101010" alt="Public Repos" />
