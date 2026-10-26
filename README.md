@@ -32,10 +32,10 @@
 
 ### 🕒 Recently Active
 
-- [**Maintenance Service User Service**](https://github.com/rahim-mustafo-x/maintenance-service-user-service) — updated `2026-10-22`
+- [**Maintenance Service User Service**](https://github.com/rahim-mustafo-x/maintenance-service-user-service) — updated `2026-10-25`
+- [**Maintenance Service Api Gate Away**](https://github.com/rahim-mustafo-x/maintenance-service-api-gate-away) — updated `2026-10-25`
 - [**Maintenance Service Job Service**](https://github.com/rahim-mustafo-x/maintenance-service-job-service) — updated `2026-10-22`
 - [**Maintenance Service Image Service**](https://github.com/rahim-mustafo-x/maintenance-service-image-service) — updated `2026-10-22`
-- [**Maintenance Service Api Gate Away**](https://github.com/rahim-mustafo-x/maintenance-service-api-gate-away) — updated `2026-10-17`
 - [**Maintenance Service Message Service**](https://github.com/rahim-mustafo-x/maintenance-service-message-service) — updated `2026-10-11`
 
 ---
@@ -45,9 +45,9 @@
 | Repository | Tech Stack / Main Language | Stars | Forks |
 |---|---|:---:|:---:|
 | [**Maintenance Service User Service**](https://github.com/rahim-mustafo-x/maintenance-service-user-service) | `Java` | ⭐ 1 | — |
+| [**Maintenance Service Api Gate Away**](https://github.com/rahim-mustafo-x/maintenance-service-api-gate-away) | `Java` | ⭐ 1 | — |
 | [**Maintenance Service Job Service**](https://github.com/rahim-mustafo-x/maintenance-service-job-service) | `Java` | — | — |
 | [**Maintenance Service Image Service**](https://github.com/rahim-mustafo-x/maintenance-service-image-service) | `Java` | ⭐ 1 | — |
-| [**Maintenance Service Api Gate Away**](https://github.com/rahim-mustafo-x/maintenance-service-api-gate-away) | `Java` | ⭐ 1 | — |
 | [**Maintenance Service Message Service**](https://github.com/rahim-mustafo-x/maintenance-service-message-service) | `Python` | ⭐ 1 | — |
 | [**Muslim Calendar**](https://github.com/rahim-mustafo-x/Muslim_calendar) | `Kotlin, Clean Architecture` | ⭐ 1 | — |
 | [**Maintenance Service Telegram Bot**](https://github.com/rahim-mustafo-x/maintenance-service-telegram-bot) | `Python` | ⭐ 1 | — |
