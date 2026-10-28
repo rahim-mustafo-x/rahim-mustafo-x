@@ -32,11 +32,11 @@
 
 ### 🕒 Recently Active
 
-- [**Maintenance Service User Service**](https://github.com/rahim-mustafo-x/maintenance-service-user-service) — updated `2026-10-25`
-- [**Maintenance Service Api Gate Away**](https://github.com/rahim-mustafo-x/maintenance-service-api-gate-away) — updated `2026-10-25`
-- [**Maintenance Service Job Service**](https://github.com/rahim-mustafo-x/maintenance-service-job-service) — updated `2026-10-22`
-- [**Maintenance Service Image Service**](https://github.com/rahim-mustafo-x/maintenance-service-image-service) — updated `2026-10-22`
-- [**Maintenance Service Message Service**](https://github.com/rahim-mustafo-x/maintenance-service-message-service) — updated `2026-10-11`
+- [**Maintenance Service User Service**](https://github.com/rahim-mustafo-x/maintenance-service-user-service) — updated `2026-10-27`
+- [**Maintenance Service Message Service**](https://github.com/rahim-mustafo-x/maintenance-service-message-service) — updated `2026-10-27`
+- [**Maintenance Service Api Gateway**](https://github.com/rahim-mustafo-x/maintenance-service-api-gateway) — updated `2026-10-27`
+- [**Maintenance Service Job Service**](https://github.com/rahim-mustafo-x/maintenance-service-job-service) — updated `2026-10-27`
+- [**Maintenance Service Image Service**](https://github.com/rahim-mustafo-x/maintenance-service-image-service) — updated `2026-10-27`
 
 ---
 
@@ -45,13 +45,13 @@
 | Repository | Tech Stack / Main Language | Stars | Forks |
 |---|---|:---:|:---:|
 | [**Maintenance Service User Service**](https://github.com/rahim-mustafo-x/maintenance-service-user-service) | `Java` | ⭐ 1 | — |
-| [**Maintenance Service Api Gate Away**](https://github.com/rahim-mustafo-x/maintenance-service-api-gate-away) | `Java` | ⭐ 1 | — |
+| [**Maintenance Service Message Service**](https://github.com/rahim-mustafo-x/maintenance-service-message-service) | `Python` | ⭐ 1 | — |
+| [**Maintenance Service Api Gateway**](https://github.com/rahim-mustafo-x/maintenance-service-api-gateway) | `Java` | ⭐ 1 | — |
 | [**Maintenance Service Job Service**](https://github.com/rahim-mustafo-x/maintenance-service-job-service) | `Java` | — | — |
 | [**Maintenance Service Image Service**](https://github.com/rahim-mustafo-x/maintenance-service-image-service) | `Java` | ⭐ 1 | — |
-| [**Maintenance Service Message Service**](https://github.com/rahim-mustafo-x/maintenance-service-message-service) | `Python` | ⭐ 1 | — |
+| [**Maintenance Service Registry**](https://github.com/rahim-mustafo-x/maintenance-service-registry) | `Java` | ⭐ 1 | — |
 | [**Muslim Calendar**](https://github.com/rahim-mustafo-x/Muslim_calendar) | `Kotlin, Clean Architecture` | ⭐ 1 | — |
 | [**Maintenance Service Telegram Bot**](https://github.com/rahim-mustafo-x/maintenance-service-telegram-bot) | `Python` | ⭐ 1 | — |
-| [**Maintenance Service Registry**](https://github.com/rahim-mustafo-x/maintenance-service-registry) | `Java` | ⭐ 1 | — |
 | [**Foottop Mobile Business**](https://github.com/rahim-mustafo-x/footTop-mobile-business) | `Kotlin` | — | — |
 | [**More Apps**](https://github.com/rahim-mustafo-x/more-apps) | `Python` | — | — |
 | [**Cryptovalyuta**](https://github.com/rahim-mustafo-x/CryptoValyuta) | `Kotlin` | ⭐ 1 | — |
