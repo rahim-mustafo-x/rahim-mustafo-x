@@ -4,8 +4,8 @@
   <h2>👋 Hi! I am Mustafo Rahim</h2>
   <h3>💻 I am a Backend and Android developer</h3>
   <br/>
-  <img src="https://img.shields.io/badge/Total%20Stars-12-00FF2B?style=for-the-badge&logo=github&logoColor=black&labelColor=101010" alt="Total Stars" />
-  <img src="https://img.shields.io/badge/Public%20Repos-19-00FF2B?style=for-the-badge&logo=github&logoColor=black&labelColor=101010" alt="Public Repos" />
+  <img src="https://img.shields.io/badge/Total%20Stars-6-00FF2B?style=for-the-badge&logo=github&logoColor=black&labelColor=101010" alt="Total Stars" />
+  <img src="https://img.shields.io/badge/Public%20Repos-12-00FF2B?style=for-the-badge&logo=github&logoColor=black&labelColor=101010" alt="Public Repos" />
   <img src="https://img.shields.io/badge/Total%20Forks-0-00FF2B?style=for-the-badge&logo=github&logoColor=black&labelColor=101010" alt="Total Forks" />
   <img src="https://img.shields.io/github/followers/rahim-mustafo-x?style=for-the-badge&logo=github&logoColor=black&labelColor=101010&color=00FF2B&label=Followers" alt="Followers" />
 </div>
@@ -28,15 +28,15 @@
 
 ### Language Breakdown (by repositories)
 
-![Python](https://img.shields.io/badge/Python-35%25-3776AB?style=flat-square) ![Java](https://img.shields.io/badge/Java-29%25-ED8B00?style=flat-square) ![Kotlin](https://img.shields.io/badge/Kotlin-29%25-7F52FF?style=flat-square) ![HTML](https://img.shields.io/badge/HTML-6%25-E34F26?style=flat-square)
+![Kotlin](https://img.shields.io/badge/Kotlin-50%25-7F52FF?style=flat-square) ![Python](https://img.shields.io/badge/Python-40%25-3776AB?style=flat-square) ![HTML](https://img.shields.io/badge/HTML-10%25-E34F26?style=flat-square)
 
 ### 🕒 Recently Active
 
-- [**Maintenance Service User Service**](https://github.com/rahim-mustafo-x/maintenance-service-user-service) — updated `2026-10-27`
-- [**Maintenance Service Message Service**](https://github.com/rahim-mustafo-x/maintenance-service-message-service) — updated `2026-10-27`
-- [**Maintenance Service Api Gateway**](https://github.com/rahim-mustafo-x/maintenance-service-api-gateway) — updated `2026-10-27`
-- [**Maintenance Service Job Service**](https://github.com/rahim-mustafo-x/maintenance-service-job-service) — updated `2026-10-27`
-- [**Maintenance Service Image Service**](https://github.com/rahim-mustafo-x/maintenance-service-image-service) — updated `2026-10-27`
+- [**Muslim Calendar**](https://github.com/rahim-mustafo-x/Muslim_calendar) — updated `2026-10-11`
+- [**Foottop Mobile Business**](https://github.com/rahim-mustafo-x/footTop-mobile-business) — updated `2026-10-04`
+- [**More Apps**](https://github.com/rahim-mustafo-x/more-apps) — updated `2026-09-28`
+- [**Cryptovalyuta**](https://github.com/rahim-mustafo-x/CryptoValyuta) — updated `2026-05-31`
+- [**Translator Telegram Bot**](https://github.com/rahim-mustafo-x/Translator-telegram-bot) — updated `2026-05-31`
 
 ---
 
@@ -44,14 +44,7 @@
 
 | Repository | Tech Stack / Main Language | Stars | Forks |
 |---|---|:---:|:---:|
-| [**Maintenance Service User Service**](https://github.com/rahim-mustafo-x/maintenance-service-user-service) | `Java` | ⭐ 1 | — |
-| [**Maintenance Service Message Service**](https://github.com/rahim-mustafo-x/maintenance-service-message-service) | `Python` | ⭐ 1 | — |
-| [**Maintenance Service Api Gateway**](https://github.com/rahim-mustafo-x/maintenance-service-api-gateway) | `Java` | ⭐ 1 | — |
-| [**Maintenance Service Job Service**](https://github.com/rahim-mustafo-x/maintenance-service-job-service) | `Java` | — | — |
-| [**Maintenance Service Image Service**](https://github.com/rahim-mustafo-x/maintenance-service-image-service) | `Java` | ⭐ 1 | — |
-| [**Maintenance Service Registry**](https://github.com/rahim-mustafo-x/maintenance-service-registry) | `Java` | ⭐ 1 | — |
 | [**Muslim Calendar**](https://github.com/rahim-mustafo-x/Muslim_calendar) | `Kotlin, Clean Architecture` | ⭐ 1 | — |
-| [**Maintenance Service Telegram Bot**](https://github.com/rahim-mustafo-x/maintenance-service-telegram-bot) | `Python` | ⭐ 1 | — |
 | [**Foottop Mobile Business**](https://github.com/rahim-mustafo-x/footTop-mobile-business) | `Kotlin` | — | — |
 | [**More Apps**](https://github.com/rahim-mustafo-x/more-apps) | `Python` | — | — |
 | [**Cryptovalyuta**](https://github.com/rahim-mustafo-x/CryptoValyuta) | `Kotlin` | ⭐ 1 | — |
